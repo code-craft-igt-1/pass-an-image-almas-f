@@ -1,5 +1,6 @@
 #include "brightener.h"
-
+#include <bits/stdc++.h>
+using namespace std;
 ImageBrightener::ImageBrightener(Image& inputImage) : m_inputImage(inputImage) {
 }
 
@@ -17,7 +18,7 @@ int ImageBrightener::BrightenWholeImage() {
                 ++attenuatedPixelCount;
                 m_inputImage.pixels[pixelIndex] = 255;
             } else {
-                m_inputImage.pixels[pixelIndex] = std::min(m_inputImage.pixels[pixelIndex] + 25, 255);
+                m_inputImage.pixels[pixelIndex] = min(m_inputImage.pixels[pixelIndex] + 25, 255);
             }
         }
     }
