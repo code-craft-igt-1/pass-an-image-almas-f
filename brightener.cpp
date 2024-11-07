@@ -4,10 +4,6 @@ ImageBrightener::ImageBrightener(Image& inputImage) : m_inputImage(inputImage) {
 }
 
 int ImageBrightener::BrightenWholeImage() {
-	// For brightening, we add a certain grayscale (25) to every pixel.
-	// While brightening, some pixels may cross the max brightness. They are
-	// called 'attenuated' pixels
-	int ImageBrightener::BrightenWholeImage() {
     // For brightening, we add a certain grayscale (25) to every pixel.
     // While brightening, some pixels may cross the max brightness. They are
     // called 'attenuated' pixels
