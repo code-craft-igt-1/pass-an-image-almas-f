@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-
+#include <memory>
 struct Image {
 	int rows;
 	int columns;
