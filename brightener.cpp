@@ -1,5 +1,5 @@
 #include "brightener.h"
-#include <bits/stdc++.h>
+#include <algorithm>    
 using namespace std;
 ImageBrightener::ImageBrightener(Image& inputImage) : m_inputImage(inputImage) {
 }
