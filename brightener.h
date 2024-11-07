@@ -15,7 +15,9 @@ class ImageBrightener {
 private:
 	Image m_inputImage;
 public:
-	ImageBrightener(Image& inputImage);
+	//ImageBrightener(Image& inputImage);
+       ImageBrightener(Image& image) : inputImage(image) {}
+
 	int BrightenWholeImage();
 	Image GetImage();
 };
