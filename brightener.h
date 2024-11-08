@@ -13,11 +13,11 @@ struct Image {
 
 class ImageBrightener {
 private:
-	Image m_inputImage;
+	Image& m_inputImage;
 public:
 	//ImageBrightener(Image& inputImage);
-       ImageBrightener(Image& image) : inputImage(image) {}
+       ImageBrightener(Image& image) : m_inputImage(image) {}
 
 	int BrightenWholeImage();
-	Image GetImage();
+	Image& GetImage();
 };
