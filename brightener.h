@@ -1,17 +1,23 @@
 #pragma once
 #include <cstdint>
-
+#include <memory>
 struct Image {
 	int rows;
 	int columns;
-	uint8_t pixels[1024 * 1024]; // max 1k x 1k image
+	    std::unique_ptr<uint8_t[]> pixels; // Use unique_ptr to manage pixel data
+
+    // Constructor that allocates memory for the pixels based on the image size
+    Image(int rows, int columns)
+        : rows(rows), columns(columns), pixels(std::make_unique<uint8_t[]>(rows * columns)) {}
 };
 
 class ImageBrightener {
 private:
-	Image m_inputImage;
+	Image& m_inputImage;
 public:
-	ImageBrightener(Image& inputImage);
+	//ImageBrightener(Image& inputImage);
+       ImageBrightener(Image& image) : m_inputImage(image) {}
+
 	int BrightenWholeImage();
-	Image GetImage();
+	Image& GetImage();
 };
